@@ -8,7 +8,7 @@ To request access to our cloud and try our optics-based hardware, contact us: ht
 # to run the script
 ```
 python ddc_ridgeclassifier.py  # to use synthetic opu on mnist
-python ddc_ridgeclassifier.py  -dataset 'cifaro10' # to use synthetic opu on cifar10 
+python ddc_ridgeclassifier.py  -dataset 'cifar10' # to use synthetic opu on cifar10 
 python ddc_ridgeclassifier.py -is_real_opu True  # to use opu on mnist with  threshold encoder 
 python ddc_ridgeclassifier.py -is_real_opu True  -encoding_method 'autoencoder' # to use opu on mnist with autoencoder 
 python ddc_ridgeclassifier.py -is_real_opu True -dataset 'cifaro10' # to use opu on cifar10 with  threshold encoder 

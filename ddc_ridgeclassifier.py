@@ -135,7 +135,7 @@ if __name__ == '__main__':
     parser.add_argument("-is_real_opu", default=False, help="to choose if using real or synthetic opu", type=bool)
     parser.add_argument("-n_subset", default=10000, help="training subset of the chosen dataset", type=int)
     parser.add_argument("-dataset", default='mnist', help="possibe choices: mnist, cifar10", type=str)
-    parser.add_argument("-encoding_method", default='threshold', help="threshold or auto encoder", type=str)
+    parser.add_argument("-encoding_method", default='threshold', help="threshold or autoencoder", type=str)
     parser.add_argument("-n_trials", default=5, help="# of trials for each random features value", type=int)
     parser.add_argument("-rps", default=sorted([500 * k for k in range(1, 41)] + [9250, 9750, 10250, 10750]), type=list)
 

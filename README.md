@@ -15,7 +15,5 @@ python ddc_ridgeclassifier.py -is_real_opu True -dataset 'cifar10' # to use opu 
 python ddc_ridgeclassifier.py -is_real_opu True  -encoding_method 'autoencoder'  -dataset 'cifaro10'# to use opu on cifar10 with autoencoder 
 ```
 
-To plot the results
-```
-plot.py -file_path <file_path>
-```
+Running ddc_ridgeclassifier.py outputs a pkl file. To plot the results using this file look at the plot.ipynb example.  
+

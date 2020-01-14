@@ -21,7 +21,12 @@ class Net(nn.Module):
         nn.init.xavier_uniform_(self.encoder.weight, gain=5 / 3)
         nn.init.xavier_uniform_(self.decoder.weight, gain=5 / 3)
 
-    def encoder(self, images):
+    def forward(self, images):
+        h = self.tanh(self.beta * self.encoder(images)) / self.beta
+        r = self.decoder(h)
+        return r
+
+    def encoder_isolate(self, images):
         h = (torch.sign(self.encoder(images)) + 1) / 2
         return h
 
@@ -49,7 +54,7 @@ def mnist(batch_size, n_train_samples=None, binary=False, encoder='threshold'):
             path = pwd + '/ae_weights/net_mnist.pt'
             net.load_state_dict(torch.load(path))
             net.eval()
-            ae = transforms.Lambda(lambda x: net.encoder(x))
+            ae = transforms.Lambda(lambda x: net.encoder_isolate(x))
             un = transforms.Lambda(lambda x: x.unsqueeze(0))
             t = transforms.Compose(
                 [transforms.ToTensor(), transforms.Normalize((0.1307,), (0.3081,)), un, ae, ae_post_processing])
@@ -90,7 +95,7 @@ def cifar10(batch_size, n_train_samples=None, binary=False, encoder='threshold')
             path = pwd + '/ae_weights/net_cifar10.pt'
             net.load_state_dict(torch.load(path))
             net.eval()
-            ae = transforms.Lambda(lambda x: net.encoder(x))
+            ae = transforms.Lambda(lambda x: net.encoder_isolate(x))
             un = transforms.Lambda(lambda x: x.unsqueeze(0))
             t = transforms.Compose(
                 [transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)), un, ae,

@@ -1,5 +1,5 @@
 # Double Descent Curve
-This is the code to reproduce Figure 5 and 6 of "The double descent risk curve" blog post on Medium.
+This is the code to reproduce Figure 5 and 6 of ["The double descent risk curve"](https://medium.com/@LightOnIO/beyond-overfitting-and-beyond-silicon-the-double-descent-curve-18b6d9810e1b) blog post on Medium.
 
 This script recovers the double descent curve using random projections plus the `RidgeClassifier` from `scikit-learn`. 
 It is possible to choose between a synthetic optical processing unit (OPU) and the real OPU. 

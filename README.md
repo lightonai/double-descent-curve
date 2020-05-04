@@ -5,7 +5,13 @@ This script recovers the double descent curve using random projections plus the 
 It is possible to choose between a synthetic optical processing unit (OPU) and the real OPU. 
 To request access to our cloud and try our optics-based hardware, contact us: https://www.lighton.ai/contact-us/
 
-# to run the script
+## Access to Optical Processing Units
+
+To request access to LightOn Cloud and try our photonic co-processor, please visit: https://cloud.lighton.ai/
+
+For researchers, we also have a LightOn Cloud for Research program, please visit https://cloud.lighton.ai/lighton-research/ for more information.
+
+## Run the experiments
 ```
 python ddc_ridgeclassifier.py  # to use synthetic opu on mnist
 python ddc_ridgeclassifier.py  -dataset 'cifar10' # to use synthetic opu on cifar10 
